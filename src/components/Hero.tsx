@@ -16,7 +16,8 @@ export default function Hero() {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/assets/Sakshi_Singh_Resume.pdf";
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    link.href = `${basePath}/assets/Sakshi_Singh_Resume.pdf`;
     link.download = "Sakshi_Singh_Resume.pdf";
     document.body.appendChild(link);
     link.click();
